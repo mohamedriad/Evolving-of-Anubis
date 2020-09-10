@@ -195,7 +195,7 @@ class Widget(QWidget):
     # defining a new Slot (takes string) to save the text inside the first text editor
     @pyqtSlot(str)
     def Saving(s):
-        print("lastchar in saving is " + lastChar)
+        
         if (lastChar == "py"):
             with open('main.py', 'w') as f:
                 TEXT = text.toPlainText()
@@ -212,10 +212,10 @@ class Widget(QWidget):
     def Open(s):
         global text
         text.setText(s)
-        print("open class")
+        
 
     def on_clicked(self, index):
-        print("onclicked")
+        
 
         nn = self.sender().model().filePath(index)
         nn = tuple([nn])
@@ -247,7 +247,7 @@ def reading(s):
     b = Signal()
     b.reading.connect(Widget.Saving)
     b.reading.emit(s)
-    print("reading")
+    
 
 
 # same as reading Function
@@ -256,7 +256,7 @@ def Openning(s):
     b = Signal()
     b.reading.connect(Widget.Open)
     b.reading.emit(s)
-    print("opening")
+    
 
 
 #
@@ -370,7 +370,7 @@ class UI(QMainWindow):
     # this function is made to get which port was selected by the user
     @QtCore.pyqtSlot()
     def PortClicked(self):
-        print("portonclicked")
+        
         action = self.sender()
         self.portNo = action.text()
         self.port_flag = 0
@@ -387,7 +387,7 @@ class UI(QMainWindow):
 
     # I made this function to save the code into a file
     def save(self):
-        print("save UI")
+        
         self.b.reading.emit("name")
 
     # I made this function to open a file and exhibits it to the user in a text editor
@@ -416,7 +416,7 @@ class UI(QMainWindow):
 #
 
 if __name__ == '__main__':
-    print("if main")
+    
     app = QApplication(sys.argv)
 
     ex = UI()
