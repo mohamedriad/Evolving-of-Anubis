@@ -51,7 +51,7 @@ STYLES = {
 class CSharpHighlighter(QSyntaxHighlighter):
     """Syntax highlighter for the Python language.
     """
-    # Python keywords
+    # CSharp keywords
 
     keywords = [
         'and', 'break', 'continue',
@@ -67,7 +67,7 @@ class CSharpHighlighter(QSyntaxHighlighter):
                    'float', 'double', 'decimal', 'const',
                    'long', 'bool', 'short', 'char', 'static', 'struct', 'var']
 
-    # Python operators
+    # CSharp operators
     operators = [
         '=',
         # Comparison
@@ -80,7 +80,7 @@ class CSharpHighlighter(QSyntaxHighlighter):
         '\^', '\|', '\&', '\~', '>>', '<<',
     ]
 
-    # Python braces
+    # CSharp braces
     braces = [
         '\{', '\}', '\(', '\)', '\[', '\]', ';', "\'", '\"']
 
